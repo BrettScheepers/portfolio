@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5, h6, strong {
     font-weight: 500;
 }
 
-p, li, span, label, input, textarea {
+p, li, span, label, input, textarea, a{
     color: var(--secondary-text);
     font-family: 'Roboto Mono', monospace;
 }
@@ -208,6 +208,37 @@ img {
 
 .project-name {
     padding: 0 1rem;
+}
+
+/* Contact Info */
+.contact-info {
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-info * {
+    margin: 2rem 0;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-links a{
+    margin: 0.5rem 0;
+    padding: 0;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 24px;
+}
+.contact-links a i{
+    margin: 0;
+    margin-right: 1rem;
+    padding: 0;
 }
 
 @media screen and (max-width: 940px) {
