@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap');
+
+:root {
+    --main-color: #040404;
+    --secondary-color: #D00000;
+
+    /* --text-color: #FCA311; */
+    --text-color: #e5e5e5;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, strong {
+    color: var(--main-text);
+    font-family: 'Russo One', sans-serif;
+    font-weight: 500;
+}
+
+p, li, span, label, input, textarea {
+    color: var(--secondary-text);
+    font-family: 'Roboto Mono', monospace;
+}
+
+a {
+    text-decoration: none;
+    color: #17a2b8;
+}
+
+ul {
+    list-style: none;
+}
+
+h1 { font-size: 56px; }
+h2 { font-size: 36px; }
+h3 { font-size: 28px; }
+h4 { font-size: 24px; }
+h5 { font-size: 20px; }
+h6 { font-size: 16px; }
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.s1 {
+    background-color: var(--main-color);
+    color: var(--text-color);
+    overflow: auto;
+}
+
+.s2 {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    overflow: auto;
+}
+
+/* Intro Section */
+.intro-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'intro-text intro-image';
+}
+
+.intro-text-wrapper {
+    grid-area: intro-text;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 2rem;
+}
+
+.intro-text-wrapper h1 {
+    margin: 0;
+}
+
+.intro-text-wrapper h1 span {
+    font-family: 'Russo One', sans-serif;
+    color: var(--secondary-color);
+}
+
+.download {
+    margin-top: 0.5rem;
+    color: var(--main-color);
+    background-color: var(--text-color);
+    padding: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+
+    font-family: 'Russo One', sans-serif;
+    font-size: 24px;
+    cursor: pointer;
+    transition: ease-in 0.4s;
+}
+
+.download:hover,
+.download:focus {
+    background-color: var(--secondary-color);
+    color: var(--text-color)
+}
+
+.intro-image-wrapper {
+    grid-area: intro-image;
+    object-fit: cover;
+}
+
+.intro-image-wrapper img {
+    filter: grayscale(100%);
+    opacity: 0.4;
+}
+
+/* About */
+.about-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'capabilities skills';
+}
+
+.capabilities {
+    grid-area: capabilities;
+    margin: 0 2rem;
+    text-align: center;
+}
+
+.skills {
+    grid-area: skills;
+    margin-left: 2rem;
+}
+
+.skills-container h2 {
+    text-align: center;
+}
+
+.skills-container {
+    width: 90%;
+}
+
+.skillbar {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1rem;
+    margin: 2rem 0;
+
+    border-radius: 23px;
+    background: #D00000;
+    box-shadow:  18px 18px 36px #530000,
+             -18px -18px 36px #ff0000;
+}
+
+.skillbar h4:nth-child(2) {
+    float: right;
+    position: relative;
+    top: -92px;
+}
+
+.skill-percentage {
+    background: var(--text-color);
+    padding: 4px;
+    box-sizing: border-box;
+    border: 1px solid var(--text-color);
+    border-radius: 6px;
+}
+
+.skill-level {
+    background: var(--main-color);
+    width: 100%;
+    height: 10px;
+    border-radius: 6px;
+}
+
+/* Projects */
+.projects-wrapper {
+    margin: 0 2rem;
+    margin-bottom: 6rem;
+    text-align: center;
+}
+
+.projects-grid {
+    margin: auto;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    /* grid-template-columns: repeat(3, 1fr); */
+    gap: 2.5rem;
+}
+
+.project-card {
+    width: clamp(200px, 100%, 300px); 
+    background-color: var(--text-color);
+    color: var(--main-color);
+    border-radius: 6px;
+}
+
+.project-card a {
+    all: unset;
+}
+
+.project-img-div {
+    height: 300px;
+    overflow: hidden;
+    border-radius: 5px 5px 0 0;
+}
+
+.project-name {
+    padding: 0 1rem;
+}
+
+@media screen and (max-width: 940px) {
+    .intro-text-wrapper {
+        text-align: center;
+    }
+    
+    .download {
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .intro-wrapper {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+                'intro-text'
+                'intro-image'
+        ;
+    }
+
+    .intro-text-wrapper {
+        text-align: center;
+        margin: 150px auto;
+        padding: 10px;
+    }
+
+    .intro-text-wrapper h1,
+    .intro-text-wrapper p,
+    .download {
+        margin-top: 2rem;
+    }
+
+    .about-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 'capabilities' 'skills';
+    }
+}
